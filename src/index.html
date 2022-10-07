@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>Juanjo Random Card Generator 1.0</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -14,16 +12,22 @@
   </head>
   <body>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <h1 class="mt-5">Random card generator</h1>
+      <div class="container">
+        <div id="theCard" class="carta">
+          <span id="palo1" class="palo"></span>
+          <p id="randomNumber">5</p>
+          <span id="palo2" class="palo"></p></span>
+        </div>
+        <button class="boton" onclick="myScript">Nueva carta</button>
       </div>
+
+      <!--<p id="spades">&#9824;</p>-->-
+      <!--<p id="clubs">&#9827;</p>-->
+      <!--<p id="hearts">&#9829;</p>-->
+      <!--<p id="diamonds">&#9830;</p> -->-->
     </div>
+
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
