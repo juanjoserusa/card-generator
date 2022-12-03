@@ -38,10 +38,17 @@ function miFunc() {
 }
 
 window.onclick = function() {
-  const numero = Math.floor(Math.random() * 12 + 1);
+  const numero = Math.floor(Math.random() * 11 + 1);
   const palo2 = Math.floor(Math.random() * 4);
 
   document.getElementById("randomNumber").innerText = numero;
+  if (numero === 10) {
+    document.getElementById("randomNumber").innerText = "J";
+  } else if (numero === 11) {
+    document.getElementById("randomNumber").innerText = "Q";
+  } else if (numero === 12) {
+    document.getElementById("randomNumber").innerText = "K";
+  }
   let suitValue = generateRandomSuit();
   document.getElementById("palo1").innerText = suitValue;
   document.getElementById("palo2").innerText = suitValue;
