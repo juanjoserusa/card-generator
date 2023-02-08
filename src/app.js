@@ -1,55 +1,37 @@
-/* eslint-disable */
 import "bootstrap";
 import "./style.css";
 
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-window.onload = function() {
-  const numero = Math.floor(Math.random() * 11);
-  const palo2 = Math.floor(Math.random() * 4);
+const numeros = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+const palos = ["♣", "♠", "♥", "♦"];
 
-  document.getElementById("randomNumber").innerText = numero;
-  let suitValue = generateRandomSuit();
-  document.getElementById("palo1").innerText = suitValue;
-  document.getElementById("palo2").innerText = suitValue;
-};
+let btnAddCard = document.getElementById("btn_add_card");
+btnAddCard.addEventListener("click", generarCarta);
 
-let generateRandomSuit = () => {
-  let suit = ["♦", "♥", "♠", "♣"];
-  let indexSuit = Math.floor(Math.random() * suit.length);
-  if (suit[indexSuit] === "♦" || suit[indexSuit] === "♥") {
-    let color = document.getElementsByClassName("palo");
-    let colorArray = [...color];
-    colorArray.map(element => {
-      element.style.color = "red";
-      return element;
-    });
-    console.log(color);
+function generarCarta() {
+  const random = el => el[Math.floor(Math.random() * el.length)];
+
+  let getNumero = random(numeros);
+  let getPalo = random(palos);
+
+  const printNumero = document.getElementById("number");
+  printNumero.innerHTML = getNumero;
+
+  const printPalo = document.querySelectorAll(".palo");
+  for (let i = 0; i < printPalo.length; i++) {
+    printPalo[i].innerHTML = getPalo;
+
+    if (getPalo === "♥" || getPalo === "♦") {
+      (printPalo[i].style.color = "red") && (printNumero.style.color = "red");
+    } else if (getPalo === "♠" || getPalo === "♣") {
+      (printPalo[i].style.color = "black") &&
+        (printNumero.style.color = "black");
+    }
   }
-  return suit[indexSuit];
-};
-
-function miFunc() {
-  document.getElementById("randomNumber").innerText = numero + 1;
-  let suitValue = generateRandomSuit();
-  document.getElementById("palo1").innerText = suitValue;
-  document.getElementById("palo2").innerText = suitValue;
 }
 
-window.onclick = function() {
-  const numero = Math.floor(Math.random() * 11 + 1);
-  const palo2 = Math.floor(Math.random() * 4);
-
-  document.getElementById("randomNumber").innerText = numero;
-  if (numero === 10) {
-    document.getElementById("randomNumber").innerText = "J";
-  } else if (numero === 11) {
-    document.getElementById("randomNumber").innerText = "Q";
-  } else if (numero === 12) {
-    document.getElementById("randomNumber").innerText = "K";
-  }
-  let suitValue = generateRandomSuit();
-  document.getElementById("palo1").innerText = suitValue;
-  document.getElementById("palo2").innerText = suitValue;
+window.onload = function() {
+  generarCarta();
 };

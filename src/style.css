@@ -4,70 +4,21 @@ body {
 }
 
 .container {
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 300px;
+  width: 22rem;
+  height: 35rem;
+  background: white;
+  border-radius: 1rem;
 }
 
-.carta {
-  height: 28em;
-  width: 20em;
-  background-color: white;
-  border-radius: 1em;
-  box-shadow: 10px 10px 18px rgba(0, 0, 0, 0.3);
+.palo {
+  font-size: 6rem;
   position: relative;
 }
 
-.carta p {
-  font: 150px/440px Times New Roman, serif;
-  text-align: center;
-  margin: auto;
-}
-
-.boton {
-  width: 15em;
-  height: 3em;
-  border-radius: 5px;
-  background-color: #8b8b8b;
-  color: white;
-  border: none;
-  box-shadow: 1px 1px #5f5e5e78;
-  font-size: 20px;
-  position: relative;
-  left: 10px;
-  margin-top: 0.5em;
-}
-
-.theButton:hover {
-  transition-duration: 0.4s;
-  background-color: #aaaaaa;
-}
-
-#palo1 {
-  font-size: 100px;
-  position: absolute;
-  top: 50px;
-  left: 50px;
-  transform: translate(-50%, -50%);
-}
-
-#palo2 {
+.palo_Down {
   transform: rotate(180deg);
-  font-size: 100px;
-  position: absolute;
-  bottom: -15px;
-  right: 15px;
 }
 
-.redSuit {
-  color: red;
-}
-
-.blackSuit {
-  color: black;
-}
-
-.h1 {
-  text-align: center;
+.number_size {
+  font-size: 11rem;
 }
